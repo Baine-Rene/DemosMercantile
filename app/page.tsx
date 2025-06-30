@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Services from "@/components/sections/services"
 
 export default function Home() {
   return (
+    <>
     <main>
       {/* Hero section */}
       <section className="relative pt-12">
@@ -36,5 +38,7 @@ export default function Home() {
         </div>
       </section>
     </main>
+    <Services/>
+</>
   )
 }
