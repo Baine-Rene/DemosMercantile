@@ -12,9 +12,9 @@ import {
   NavigationMenuContent,
   NavigationMenuTrigger,
   NavigationMenuLink,
- // NavigationMenuIndicator,
- // NavigationMenuViewport,
- // navigationMenuTriggerStyle,
+  // NavigationMenuIndicator,
+  // NavigationMenuViewport,
+  // navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
 
@@ -42,7 +42,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="/"
-                    className="navigation-links group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none"
+                    className="navigation-links group inline-flex h-12 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-lg font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent disabled:pointer-events-none"
                   >
                     Home
                   </NavigationMenuLink>
@@ -50,7 +50,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="/"
-                    className="navigation-links group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none"
+                    className="navigation-links group inline-flex h-12 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-lg font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent disabled:pointer-events-none"
                   >
                     About
                   </NavigationMenuLink>
@@ -59,14 +59,16 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="/"
-                    className="navigation-links group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none"
+                    className="navigation-links group inline-flex h-12 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-lg font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent disabled:pointer-events-none"
                   >
                     Services
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="navigation-links group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none">Contact</NavigationMenuTrigger>
+                  <NavigationMenuTrigger
+                    className="navigation-links group inline-flex h-12 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-lg font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent disabled:pointer-events-none"
+                  >Contact</NavigationMenuTrigger>
 
                   <NavigationMenuContent>
                     <ul className="grid w-[300px] gap-4">
@@ -91,7 +93,6 @@ export function Navbar() {
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-
               </NavigationMenuList>
             </NavigationMenu>
           </div>
@@ -99,7 +100,7 @@ export function Navbar() {
 
 
           <div className="flex items-center space-x-4">
-            <Button variant="default" size="sm">
+            <Button className="button" variant="default" size="sm">
               Request for quote
             </Button>
 
