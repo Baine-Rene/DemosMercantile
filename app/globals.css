@@ -118,11 +118,17 @@
   }
   body {
     @apply bg-background text-foreground;
-
+    background-color: #04704e;
   }
 }
 
 /*Custom Styles*/
+
+/*Button*/
+.button:hover {
+  background-color: #fff3c3;
+  color: #04704e;
+}
 
 /*Navigation*/
 .navigation-bar {
