@@ -12,25 +12,25 @@ import {
   NavigationMenuContent,
   NavigationMenuTrigger,
   NavigationMenuLink,
-  NavigationMenuIndicator,
-  NavigationMenuViewport,
-  navigationMenuTriggerStyle,
+ // NavigationMenuIndicator,
+ // NavigationMenuViewport,
+ // navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { Navigation } from "lucide-react"
 
 
 export function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full bg-background">
+    <nav className="sticky top-0 z-50 w-full navigation-bar">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
+
           {/*Logo*/}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center">
-                <Image src="/public/vercel.svg" alt="" width={32} height={32} />
+              <div className="h-8 w-8 flex items-center justify-center">
+                <Image src="/logo.svg" alt="" width={32} height={32} />
               </div>
-              <span className="font-bold text-xl">Demos Mercantile</span>
+              <span className="font-bold text-md">Demos Mercantile</span>
             </Link>
           </div>
 
@@ -42,7 +42,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="/"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none"
+                    className="navigation-links group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none"
                   >
                     Home
                   </NavigationMenuLink>
@@ -50,7 +50,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="/"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none"
+                    className="navigation-links group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none"
                   >
                     About
                   </NavigationMenuLink>
@@ -59,19 +59,37 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     href="/"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none"
+                    className="navigation-links group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none"
                   >
                     Services
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-                
+
                 <NavigationMenuItem>
-                  <NavigationMenuLink
-                    href="/"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none"
-                  >
-                    Contact
-                  </NavigationMenuLink>
+                  <NavigationMenuTrigger className="navigation-links group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 px-y text-sm font-bold transition-colors hover:bg-accent hover:text-accent-foreground focus:big-accent disabled:pointer-events-none">Contact</NavigationMenuTrigger>
+
+                  <NavigationMenuContent>
+                    <ul className="grid w-[300px] gap-4">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link href="#">
+                            <div className="font-bold">Phone:</div>
+                            <div className="text-muted-foreground">
+                              +256 7777 888 666
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                          <Link href="#">
+                            <div className="font-bold">Email:</div>
+                            <div className="text-muted-foreground">
+                              example@demosmercantile.com
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
 
               </NavigationMenuList>
@@ -85,7 +103,7 @@ export function Navbar() {
               Request for quote
             </Button>
 
-
+            {/*Mobile hamburger button*/}
             <Button
               variant="ghost"
               size="sm"
