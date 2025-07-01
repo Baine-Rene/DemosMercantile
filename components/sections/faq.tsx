@@ -15,7 +15,7 @@ interface Faq1Props {
   items?: FaqItem[];
 }
 
-const Faq1 = ({
+const Faq = ({
   heading = "Frequently asked questions",
   items = [
     {
@@ -41,9 +41,9 @@ const Faq1 = ({
   ],
 }: Faq1Props) => {
   return (
-    <section className="py-32">
-      <div className="container max-w-3xl">
-        <h1 className="mb-4 text-3xl font-semibold md:mb-11 md:text-4xl">
+    <section className="py-28 bg-white">
+      <div className="container mx-auto px-4">
+        <h1 className="mb-4 text-3xl font-extrabold md:mb-11 md:text-4xl">
           {heading}
         </h1>
         <Accordion type="single" collapsible>
@@ -63,4 +63,4 @@ const Faq1 = ({
   );
 };
 
-export { Faq1 };
+export { Faq };
