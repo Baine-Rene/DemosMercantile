@@ -30,7 +30,7 @@ export function Navbar() {
               <div className="h-8 w-8 flex items-center justify-center">
                 <Image src="/logo.svg" alt="" width={32} height={32} />
               </div>
-              <span className="font-bold text-md">Demos Mercantile</span>
+              <span className="font-bold text-md hidden md:inline ">Demos Mercantile</span>
             </Link>
           </div>
 
@@ -96,9 +96,7 @@ export function Navbar() {
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-
-
-
+          
           <div className="flex items-center space-x-4">
             <Button className="button" variant="default" size="sm">
               Request for quote
