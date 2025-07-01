@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import {About} from "@/components/sections/about"
 import { Testimonial } from "@/components/sections/testimonials"
 import Services from "@/components/sections/services"
+import WhyUs from "@/components/sections/whyUs"
 import Image from "next/image"
 
 
@@ -50,6 +51,9 @@ export default function Home() {
 
       {/*Testimonial*/}
       <Testimonial />
+
+      {/*Why Us*/}
+      <WhyUs/>
 
     </>
   )
