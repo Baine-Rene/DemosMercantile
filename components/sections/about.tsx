@@ -37,7 +37,7 @@ interface About {
 }
 
 const About = ({
-    title = "Our Journey",
+    title = "Our Journey through the years",
     description = "Incorporated in Uganda on 27 th December 2023 under Registration No: 80034510830110, we have grown to become a trusted partner or food processors, wholesalers, and retailers across regional and international markets. With a strong commitment to sustainability, quality, and customer satisfaction.",
     mainImage = {
         src: "/Images/IMG - 4.png",
@@ -50,7 +50,7 @@ const About = ({
     breakout = {
         src: "/logo-about.svg",
         alt: "company logo",
-        title: "Export all your commodities with us",
+        title: "We are committed to meeting your trade needs.",
         description:
             "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
         buttonText: "Learn More",

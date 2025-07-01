@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import Services from "@/components/sections/services"
 import {About} from "@/components/sections/about"
+import { Testimonial } from "@/components/sections/testimonials"
+import Services from "@/components/sections/services"
+import Image from "next/image"
+
 
 export default function Home() {
   return (
@@ -46,6 +48,10 @@ export default function Home() {
       {/*About*/}
       <About/>
 
+      {/*Testimonial*/}
+      <Testimonial />
+
     </>
   )
 }
+
