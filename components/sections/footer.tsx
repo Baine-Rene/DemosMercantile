@@ -45,14 +45,12 @@ const Footer = ({
       ],
     },
     {
-      title: "Company",
+      title: "Links",
       links: [
         { text: "About", url: "#" },
         { text: "Team", url: "#" },
-        { text: "Blog", url: "#" },
-        { text: "Careers", url: "#" },
+        { text: "Services", url: "#" },
         { text: "Contact", url: "#" },
-        { text: "Privacy", url: "#" },
       ],
     },
     {
@@ -94,7 +92,7 @@ const Footer = ({
                     height={42}
                   />
                 </a>
-                <p className="text-xl text-white font-bold">{logo.title}</p>
+                <p className="text-2xl text-white font-bold">{logo.title}</p>
               </div>
               <p className="mt-4 text-white font-regular">{tagline}</p>
             </div>

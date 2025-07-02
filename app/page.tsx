@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button"
-import {About} from "@/components/sections/about"
+import { About } from "@/components/sections/about"
 import { Testimonial } from "@/components/sections/testimonials"
 import { Faq } from "@/components/sections/faq"
+import { Cta } from "@/components/sections/cta"
 import Services from "@/components/sections/services"
 import WhyUs from "@/components/sections/whyUs"
 import Image from "next/image"
@@ -49,17 +50,17 @@ export default function Home() {
       <Services />
 
       {/*About*/}
-      <About/>
+      <About />
 
       {/*Testimonial*/}
       <Testimonial />
 
       {/*Why Us*/}
-      <WhyUs/>
+      <WhyUs />
 
       {/*FAQ*/}
-      <Faq/>
-
+      <Faq />
+      <Cta heading={"Download our company profile"} description={"If you would like to learn more about Demos Mercantile download our company profile for in depth details."} />
     </>
   )
 }
