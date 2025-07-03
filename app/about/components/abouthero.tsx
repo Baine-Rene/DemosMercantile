@@ -1,5 +1,4 @@
 import { HandHelping, Users, Zap } from "lucide-react";
-
 import { Separator } from "@/components/ui/separator";
 import React from "react";
 import Image from "next/image"
