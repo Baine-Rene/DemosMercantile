@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/navigation-menu"
 
 
-export function Navbar() {
+export function Navbar1() {
   return (
     <nav className="sticky top-0 z-50 w-full navigation-bar">
       <div className="container mx-auto px-4">

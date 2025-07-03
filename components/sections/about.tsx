@@ -62,7 +62,7 @@ const About = ({
     return (
         <section className="py-32">
             <div className="container mx-auto px-4">
-                <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
+                <div className="mb-14 grid gap-5 md:grid-cols-2 md:text-left">
                     <h1 className="text-5xl text-white font-extrabold">{title}</h1>
                     <p className="text-white">{description}</p>
                 </div>

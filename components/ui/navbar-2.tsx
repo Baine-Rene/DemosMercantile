@@ -56,7 +56,8 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2" aria-label="Demos Mercantile Home">
+          {/* Removed focus ring from the logo link as well for consistency */}
+          <Link href="/" className="flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0" aria-label="Demos Mercantile Home">
             <Image
               src="/logo.svg"
               alt="Demos Mercantile Logo"
@@ -75,7 +76,8 @@ export function Navbar() {
                   item.items ? (
                     <NavigationMenuItem className="navigation-links" key={item.title}>
                       <NavigationMenuTrigger
-                        className={`text-base font-medium ${item.title === "Contact" ? "data-[state=open]:bg-transparent data-[state=open]:text-foreground hover:bg-transparent hover:text-foreground focus:bg-transparent focus:text-foreground" : ""}`}
+                        // Added focus-visible classes to remove ring
+                        className={`text-base font-medium focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 ${item.title === "Contact" ? "data-[state=open]:bg-transparent data-[state=open]:text-foreground hover:bg-transparent hover:text-foreground focus:bg-transparent focus:text-foreground" : ""}`}
                       >
                         {item.title}
                       </NavigationMenuTrigger>
@@ -86,7 +88,8 @@ export function Navbar() {
                               <NavigationMenuLink asChild>
                                 <Link
                                   href={subItem.url}
-                                  className="flex flex-col p-2 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
+                                  // Added focus-visible classes to remove ring
+                                  className="flex flex-col p-2 hover:bg-accent hover:text-accent-foreground rounded-md transition-colors focus-visible:outline-none focus-visible:ring-0"
                                 >
                                   <div className="font-semibold text-sm leading-none">{subItem.title}</div>
                                   <div className="text-muted-foreground text-xs leading-none mt-1">
@@ -103,7 +106,8 @@ export function Navbar() {
                     <NavigationMenuItem key={item.title}>
                       <NavigationMenuLink
                         href={item.url}
-                        className="group inline-flex h-10 items-center justify-center rounded-md navigation-links px-4 py-2 font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                        // Modified focus classes to remove ring
+                        className="group inline-flex h-10 items-center justify-center rounded-md navigation-links px-4 py-2 font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-0 focus:ring-offset-0"
                       >
                         {item.title}
                       </NavigationMenuLink>
@@ -116,12 +120,22 @@ export function Navbar() {
 
           {/* CTA and Mobile Menu */}
           <div className="flex items-center space-x-6">
+            {/* The primary button will also inherit the focus-visible behavior from ui/button, 
+                if you need to override it specifically, add classes here. 
+                Shadcn's Button already has focus-visible:outline-none, but ring might be present.
+                If it still shows, add focus-visible:ring-0 focus-visible:ring-offset-0 to this button's className.
+            */}
             <Button className="button text-sm" variant="default" size="sm">
               Request a Quote
             </Button>
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="sm" className="md:hidden" aria-label="Open mobile menu">
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="md:hidden focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0" // Added focus-visible classes
+                  aria-label="Open mobile menu"
+                >
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
@@ -131,9 +145,10 @@ export function Navbar() {
               >
                 <SheetHeader className="pb-4">
                   <SheetTitle>
+                    {/* Removed focus ring from the mobile logo link */}
                     <Link
                       href="/"
-                      className="flex items-center space-x-2"
+                      className="flex items-center space-x-2 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
                       onClick={() => setIsSheetOpen(false)}
                     >
                       <Image src="/logo.svg" alt="Demos Mercantile Logo" width={32} height={32} />
@@ -150,7 +165,10 @@ export function Navbar() {
                           value={item.title}
                           className="border-b-0"
                         >
-                          <AccordionTrigger className="text-base font-semibold py-3 hover:no-underline">
+                          <AccordionTrigger 
+                            // Added focus-visible classes to remove ring
+                            className="text-base font-semibold py-3 hover:no-underline focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                          >
                             {item.title}
                           </AccordionTrigger>
                           <AccordionContent className="flex flex-col gap-3 pb-2 pl-4">
@@ -158,7 +176,8 @@ export function Navbar() {
                               <Link
                                 key={subItem.title}
                                 href={subItem.url}
-                                className="block text-sm hover:text-primary transition-colors hover:no-underline"
+                                // Added focus-visible classes to remove ring
+                                className="block text-sm hover:text-primary transition-colors hover:no-underline focus-visible:outline-none focus-visible:ring-0"
                                 onClick={() => setIsSheetOpen(false)}
                               >
                                 <div className="font-medium">{subItem.title}</div>
@@ -171,7 +190,8 @@ export function Navbar() {
                         <Link
                           key={item.title}
                           href={item.url}
-                          className="block text-base font-semibold py-3 border-b-0 hover:text-primary transition-colors hover:no-underline"
+                          // Added focus-visible classes to remove ring
+                          className="block text-base font-semibold py-3 border-b-0 hover:text-primary transition-colors hover:no-underline focus-visible:outline-none focus-visible:ring-0"
                           onClick={() => setIsSheetOpen(false)}
                         >
                           {item.title}
@@ -181,6 +201,8 @@ export function Navbar() {
                   </Accordion>
 
                   {/* Request for Quote Button in Mobile */}
+                  {/* Similar to the desktop primary button, if you need to specifically remove its focus ring, 
+                      add focus-visible:ring-0 focus-visible:ring-offset-0 to its className */}
                   <Button variant="default" className="w-full mt-4" onClick={() => setIsSheetOpen(false)}>
                     Request a Quote
                   </Button>

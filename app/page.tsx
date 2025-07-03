@@ -7,8 +7,6 @@ import Services from "@/components/sections/services"
 import WhyUs from "@/components/sections/whyUs"
 import Image from "next/image"
 
-
-
 export default function Home() {
   return (
     <>
